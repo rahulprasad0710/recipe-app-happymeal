@@ -192,8 +192,8 @@ input:focus {
     flex-grow: none;
     border-bottom: #e42421 1px solid;
     position: absolute;
-    top: 50px;
-
+    top: 62px;
+    background-color: #ffff;
     width: 100%;
     overflow: hidden;
     left: -100%;

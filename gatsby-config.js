@@ -6,6 +6,20 @@ module.exports = {
     author: "rahul@gamil.com",
   },
   plugins: [
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: `${__dirname}/src/asset/images`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `styles`,
+        path: `${__dirname}/src/asset/css`,
+      },
+    },
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,

@@ -4,7 +4,7 @@ import Layout from "../components/Layout"
 const Recipe = () => {
   return (
     <Layout>
-      <h3>This is our Recipe page</h3>
+      <section className="page-recipe">this is recipe page</section>
     </Layout>
   )
 }

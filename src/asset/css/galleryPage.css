@@ -1,0 +1,22 @@
+.gallery-container {
+  padding: 10px;
+  text-align: center;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(autofill, minmax(450px, 1px));
+  grid-auto-rows: minmax(40px, auto);
+  margin: 0 auto;
+  padding: 0 32px;
+  max-width: 1200px;
+}
+
+.gallery-image-item:nth-child(5) {
+  grid-column-end: span 2;
+}
+.gallery-image-item:nth-child(7) {
+  grid-column-end: span 2;
+  grid-row-start: 4;
+}

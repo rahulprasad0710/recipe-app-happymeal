@@ -9,7 +9,7 @@ export default function Home() {
     <Layout>
       <div className="page-main ">
         <StaticImage
-          src="../asset/hamburger.jpg"
+          src="../asset/images/hamburger.jpg"
           alt="food"
           placeholder="blurred"
           layout="fullWidth"

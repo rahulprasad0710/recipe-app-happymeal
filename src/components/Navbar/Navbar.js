@@ -74,7 +74,7 @@ const Navbar = () => {
                 activeClassName="navLink-active"
                 to="/recipes/"
               >
-                RECIPE
+                RECIPES
               </Link>
             </li>
             <li className="navbar_nav-menu-item">
