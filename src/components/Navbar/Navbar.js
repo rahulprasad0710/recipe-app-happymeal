@@ -12,10 +12,11 @@ const Navbar = () => {
 
   return (
     <nav className="navbar">
-      <div className="navbar_nav-container container-md">
+      <div className="navbar_nav-container container-lg">
         <div className="navbar_brand-toggle">
           <Link className="navbar_brandName" to="/">
-            Everest Sketch
+            <span className="text-red"> HAPPY</span>
+            <span className="text-yellow"> MEAL</span>
           </Link>
           <div className="navbar_toogle-btns " onClick={toggleMenuHandler}>
             <div
@@ -89,7 +90,11 @@ const Navbar = () => {
           </ul>
 
           <div className="navbar-searchbox">
-            <input type="text" placeholder="search..." />
+            <input
+              type="text"
+              className="navbar-input"
+              placeholder="Search..."
+            />
           </div>
         </div>
       </div>
