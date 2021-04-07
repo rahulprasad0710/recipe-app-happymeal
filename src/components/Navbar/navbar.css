@@ -175,6 +175,7 @@ input:focus {
     width: 100%;
     display: block;
     padding: 10px 0;
+    font-weight: bold;
   }
   .navbar_burger-1 {
     transform: rotate(-45deg) translate(-3px, 5px);

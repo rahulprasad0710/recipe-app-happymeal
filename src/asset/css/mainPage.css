@@ -1,0 +1,29 @@
+@import url("https://fonts.googleapis.com/css2?family=Satisfy&display=swap");
+
+.page-main {
+  position: relative;
+}
+
+.heading {
+  top: 40px;
+  left: 200px;
+  position: absolute;
+  font-size: 60px;
+  z-index: 10;
+  text-align: center;
+  font-stretch: expanded;
+  font-family: "Satisfy", cursive;
+}
+
+@media only screen and (max-width: 770px) {
+  .heading {
+    top: 10%;
+
+    position: absolute;
+    font-size: 30px;
+    z-index: 10;
+    text-align: center;
+    font-stretch: expanded;
+    font-family: "Satisfy", cursive;
+  }
+}

@@ -1,15 +1,13 @@
 module.exports = {
   /* Your site config here */
   siteMetadata: {
-    title: "Pooza The Doc",
-    description: "medical related blog articles",
-    person: { name: "Pooza Yadav", age: 28 },
-    simpleData: ["item 1", "item 2"],
+    title: "Happy Meal",
+    description: "recipes and food",
     author: "rahul@gamil.com",
-    complexData: [
-      { name: "Rahul", age: 27 },
-      { name: "shayam", age: 25 },
-    ],
   },
-  plugins: [],
+  plugins: [
+    `gatsby-plugin-image`,
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
+  ],
 }

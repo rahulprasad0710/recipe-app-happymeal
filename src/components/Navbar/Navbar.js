@@ -72,9 +72,9 @@ const Navbar = () => {
                 onClick={() => setToggleMenu(false)}
                 className="navbar_nav-menu-item-link"
                 activeClassName="navLink-active"
-                to="/tag"
+                to="/recipes/"
               >
-                TAG
+                RECIPE
               </Link>
             </li>
             <li className="navbar_nav-menu-item">
