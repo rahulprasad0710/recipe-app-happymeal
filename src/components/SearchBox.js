@@ -1,5 +1,5 @@
 import React, { useState, useContext } from "react"
-
+import { navigate } from "gatsby"
 import { IconContext } from "react-icons"
 import { BsSearch } from "react-icons/bs"
 import AppContext from "../context/AppContext"
@@ -15,6 +15,7 @@ const SearchBox = props => {
     e.preventDefault()
     searchRecipeFn(food)
     setFood("")
+    navigate("/search")
   }
 
   return (
