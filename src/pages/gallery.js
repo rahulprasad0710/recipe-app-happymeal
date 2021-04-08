@@ -24,11 +24,13 @@ const galleryQuery = graphql`
 const Gallery = () => {
   const data = useStaticQuery(galleryQuery)
   const allImage = data.allFile.nodes
-  console.log(allImage)
 
   const eachImgItem = allImage.map(eachImg => (
     <div className="gallery-image-item" key={eachImg.id}>
-      <GatsbyImage image={eachImg.childImageSharp.gatsbyImageData} />
+      <GatsbyImage
+        image={eachImg.childImageSharp.gatsbyImageData}
+        alt={eachImg.id}
+      />
     </div>
   ))
 

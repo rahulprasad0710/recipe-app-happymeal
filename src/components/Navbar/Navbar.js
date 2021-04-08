@@ -98,11 +98,3 @@ const Navbar = () => {
 }
 
 export default Navbar
-
-//  <div className="navbar-searchbox">
-//             <input
-//               type="text"
-//               className="navbar-input"
-//               placeholder="Search..."
-//             />
-//           </div>

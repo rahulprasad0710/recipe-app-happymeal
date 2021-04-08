@@ -1,16 +1,19 @@
-import React, { useState } from "react"
-import { Link } from "gatsby"
+import React, { useState, useContext } from "react"
+
 import { IconContext } from "react-icons"
 import { BsSearch } from "react-icons/bs"
+import AppContext from "../context/AppContext"
 
-const SearchBox = () => {
+const SearchBox = props => {
+  const { searchRecipeFn } = useContext(AppContext)
+
   const [food, setFood] = useState("")
   const handleChange = e => {
     setFood(e.target.value)
   }
   const handleSubmit = e => {
     e.preventDefault()
-    console.log(food)
+    searchRecipeFn(food)
     setFood("")
   }
 

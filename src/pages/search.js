@@ -1,10 +1,10 @@
 import React, { useContext } from "react"
 import Layout from "../components/Layout"
-import AppContext from "../context/SearchContext"
+import AppContext from "../context/AppContext"
 
 const Search = () => {
-  const { searchValueFn } = useContext(AppContext)
-  console.log(searchValueFn)
+  const { recipe } = useContext(AppContext)
+  console.log(recipe)
   return (
     <Layout>
       <section>
