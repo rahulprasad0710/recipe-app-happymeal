@@ -6,7 +6,7 @@ import Layout from "../components/Layout"
 
 const galleryQuery = graphql`
   {
-    allFile(filter: { sourceInstanceName: { eq: "images" } }, skip: 1) {
+    allFile(filter: { sourceInstanceName: { eq: "images" } }) {
       nodes {
         name
         id
