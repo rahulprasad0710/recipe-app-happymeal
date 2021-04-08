@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import { Link } from "gatsby"
 import "./navbar.css"
+import SearchBox from "../SearchBox"
 
 const Navbar = () => {
   const [toggleMenu, setToggleMenu] = useState(false)
@@ -89,13 +90,7 @@ const Navbar = () => {
             </li>
           </ul>
 
-          <div className="navbar-searchbox">
-            <input
-              type="text"
-              className="navbar-input"
-              placeholder="Search..."
-            />
-          </div>
+          <SearchBox />
         </div>
       </div>
     </nav>
@@ -103,3 +98,11 @@ const Navbar = () => {
 }
 
 export default Navbar
+
+//  <div className="navbar-searchbox">
+//             <input
+//               type="text"
+//               className="navbar-input"
+//               placeholder="Search..."
+//             />
+//           </div>

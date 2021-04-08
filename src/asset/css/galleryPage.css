@@ -9,7 +9,7 @@
   grid-template-columns: repeat(autofill, minmax(450px, 1px));
   grid-auto-rows: minmax(40px, auto);
   margin: 0 auto;
-  padding: 0 32px;
+  padding: 0 12px;
   max-width: 1200px;
 }
 
