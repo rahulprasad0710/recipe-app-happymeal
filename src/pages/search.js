@@ -1,6 +1,7 @@
 import React, { useContext, useState, useEffect, useLayoutEffect } from "react"
 import axios from "axios"
 import Layout from "../components/Layout"
+import { StaticImage } from "gatsby-plugin-image"
 import AppContext from "../context/AppContext"
 import slugify from "slugify"
 import { Link } from "gatsby"
@@ -31,13 +32,30 @@ const Search = () => {
   if (fetchData) {
     var oneRecipeMain = fetchData.data.hits.map(oneRecipe => {
       return (
-        <Link key={oneRecipe.recipe.label} to="/">
-          <h3>{oneRecipe.recipe.label}</h3>
+        <Link
+          className="page-main-onerecipe"
+          key={oneRecipe.recipe.label}
+          to="/"
+        >
+          <h2>{oneRecipe.recipe.label}</h2>
+
           <img
             src={oneRecipe.recipe.image}
             alt={oneRecipe.recipe.label}
-            style={{ width: "300px" }}
+            className="mainall-food-img"
           />
+          <p>
+            {oneRecipe.recipe.dishType &&
+              oneRecipe.recipe.dishType.map(ele => (
+                <span>Dish Type : {ele}</span>
+              ))}
+          </p>
+          <p>
+            {oneRecipe.recipe.cuisineType &&
+              oneRecipe.recipe.cuisineType.map(ele => (
+                <span>Cuisine Type : {ele}</span>
+              ))}
+          </p>
         </Link>
       )
     })
@@ -45,11 +63,14 @@ const Search = () => {
 
   return (
     <Layout>
-      <section>
-        <h6 className="text-info text-center">
-          {isLoading && <span className="text-danger">Loading.... </span>}
-          {fetchData && <div className="text-danger">{oneRecipeMain}</div>}
-        </h6>
+      <section className="container-lg">
+        {!(recipe == "") && <h5>Searched for {recipe} </h5>}
+        <div>
+          {isLoading && <div className="container-lg ">Loading.... </div>}
+          {fetchData && (
+            <div className="page-main-allrecipe  ">{oneRecipeMain}</div>
+          )}
+        </div>
       </section>
     </Layout>
   )
