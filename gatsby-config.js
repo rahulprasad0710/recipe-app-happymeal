@@ -1,11 +1,21 @@
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
 module.exports = {
-  /* Your site config here */
   siteMetadata: {
     title: "Happy Meal",
     description: "recipes and food",
     author: "rahul@gamil.com",
   },
   plugins: [
+    {
+      resolve: `gatsby-source-contentful`,
+      options: {
+        spaceId: `a3vg8yxpqbec`,
+        accessToken: process.env.CONTENTFUL_API_KEY,
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
