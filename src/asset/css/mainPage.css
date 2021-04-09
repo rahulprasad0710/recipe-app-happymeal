@@ -1,6 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Satisfy&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap");
 
+a {
+  color: #1d2597;
+}
 .page-main {
   position: relative;
 }
@@ -66,7 +69,7 @@
   border: 1px solid;
   cursor: pointer;
   font-size: 16px;
-  padding: 10px 30px;
+  padding: 10px 20px;
   font-weight: 300;
   font-style: normal;
   transition: all 0.3s ease;
