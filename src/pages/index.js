@@ -1,10 +1,12 @@
 import React from "react"
+import slugify from "slugify"
 import { useStaticQuery, graphql, Link } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import "./index.css"
 import "../asset/css/mainPage.css"
 import { StaticImage } from "gatsby-plugin-image"
 import Layout from "../components/Layout"
+import { AiOutlineArrowRight } from "react-icons/ai"
 
 const allRecipeQuery = graphql`
   {
@@ -34,19 +36,27 @@ export default function Home() {
   console.log(recipeNode)
   console.log()
 
-  const oneRecipeMain = recipeNode.map(oneRecipe => (
-    <div key={oneRecipe.id} className="page-main-onerecipe">
-      <h2>{oneRecipe.title}</h2>
-      <GatsbyImage
-        image={oneRecipe.recipeimage.gatsbyImageData}
-        alt={oneRecipe.recipeimage.title}
-      />
-      <p>{oneRecipe.tag.tagIntro} </p>
-      <Link to={`/recipes/${oneRecipe.id}`}>
-        <button> Read More... </button>
+  const oneRecipeMain = recipeNode.map(oneRecipe => {
+    const slug = slugify(oneRecipe.title, { lower: true })
+
+    return (
+      <Link
+        to={`/recipes/${slug}`}
+        key={oneRecipe.id}
+        className="page-main-onerecipe"
+        state={{ _id: oneRecipe.id }}
+      >
+        <h2>{oneRecipe.title}</h2>
+        <GatsbyImage
+          image={oneRecipe.recipeimage.gatsbyImageData}
+          alt={oneRecipe.recipeimage.title}
+          className="mainall-food-img"
+        />
+        <h5>Prep Time : {oneRecipe.prepTime} min</h5>
+        <h5>Cook Time : {oneRecipe.cookTime} min</h5>
       </Link>
-    </div>
-  ))
+    )
+  })
 
   return (
     <Layout>
@@ -64,7 +74,11 @@ export default function Home() {
         </section>
       </div>
       <h1 className="text-center">TODAY'S MENU</h1>
-      <div className="page-main-allrecipe container ">{oneRecipeMain}</div>
+      <div className="page-main-allrecipe container-lg ">{oneRecipeMain}</div>
     </Layout>
   )
 }
+
+//<p>{oneRecipe.tag.tagIntro} </p>
+
+//
