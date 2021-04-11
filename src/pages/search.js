@@ -54,8 +54,6 @@ const Search = () => {
                 <span>Cuisine Type : {ele}</span>
               ))}
           </p>
-
-          <button>Get Recipe</button>
         </Link>
       )
     })

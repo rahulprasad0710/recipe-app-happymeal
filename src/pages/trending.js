@@ -1,15 +1,20 @@
 import React, { useState } from "react"
-import { useStaticQuery, graphql } from "gatsby"
+import { useStaticQuery, graphql, Link } from "gatsby"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import Layout from "../components/Layout"
 
 const categoryQuery = graphql`
   {
-    allContentfulRecipe(sort: { fields: category }) {
+    allContentfulRecipe(sort: { fields: category, order: DESC }) {
       nodes {
-        title
+        id
         category
+        title
         tag {
           tagall
+        }
+        recipeimage {
+          gatsbyImageData(layout: FULL_WIDTH, placeholder: DOMINANT_COLOR)
         }
       }
     }
@@ -19,7 +24,7 @@ const categoryQuery = graphql`
 const Trending = () => {
   const fetchData = useStaticQuery(categoryQuery)
   const sortedData = fetchData.allContentfulRecipe.nodes
-
+  console.log(fetchData)
   let catNow = " "
   console.log(`outmap ${catNow}`)
 
@@ -29,15 +34,20 @@ const Trending = () => {
       console.log("same cats")
 
       return (
-        <div>
-          <h3>{e.title}</h3>
+        <Link className="page-main-onerecipe">
+          <h2>{e.title}</h2>
+          <GatsbyImage
+            image={e.recipeimage.gatsbyImageData}
+            alt={e.title}
+            className="mainall-food-img"
+          />
           <h4>
             Tag:{" "}
             {e.tag.tagall.map(e => (
               <p>{e}</p>
             ))}
           </h4>
-        </div>
+        </Link>
       )
     } else {
       console.log("diff cat")
@@ -45,14 +55,23 @@ const Trending = () => {
       console.log(`diff ${catNow}`)
       return (
         <div>
-          <h2>Category: {e.category}</h2>
-          <h3>{e.title}</h3>
-          <h4>
-            Tag:
-            {e.tag.tagall.map(e => (
-              <p>{e}</p>
-            ))}
-          </h4>
+          <h2 className="page-cat-category"> {e.category}</h2>
+
+          <Link className="page-main-onerecipe">
+            <h2>{e.title}</h2>
+            <GatsbyImage
+              image={e.recipeimage.gatsbyImageData}
+              alt={e.title}
+              className="mainall-food-img"
+            />
+
+            <h4>
+              Tag:
+              {e.tag.tagall.map(e => (
+                <p>{e}</p>
+              ))}
+            </h4>
+          </Link>
         </div>
       )
     }
@@ -60,7 +79,10 @@ const Trending = () => {
 
   return (
     <Layout>
-      <section>{catgData}</section>
+      <section className="container-lg">
+        <h1>CATEGORY :</h1>
+        {catgData}
+      </section>
     </Layout>
   )
 }

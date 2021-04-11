@@ -6,7 +6,6 @@ import "./index.css"
 import "../asset/css/mainPage.css"
 import { StaticImage } from "gatsby-plugin-image"
 import Layout from "../components/Layout"
-import { AiOutlineArrowRight } from "react-icons/ai"
 
 const allRecipeQuery = graphql`
   {
@@ -49,9 +48,11 @@ export default function Home() {
           alt={oneRecipe.recipeimage.title}
           className="mainall-food-img"
         />
-        <h5>Prep Time : {oneRecipe.prepTime} min</h5>
-        <h5>Cook Time : {oneRecipe.cookTime} min</h5>
-        <h5>Category : {oneRecipe.category}</h5>
+        <div>
+          <h5>Prep Time : {oneRecipe.prepTime} min</h5>
+          <h5>Cook Time : {oneRecipe.cookTime} min</h5>
+          <h5>Category : {oneRecipe.category}</h5>
+        </div>
       </Link>
     )
   })

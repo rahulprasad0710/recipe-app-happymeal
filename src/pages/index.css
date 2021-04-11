@@ -73,6 +73,7 @@ code {
 
 a {
   text-decoration: none;
+  color: #303334;
 }
 .text-center {
   text-align: text-center;
@@ -128,7 +129,8 @@ a {
   justify-self: center;
   align-items: center;
 }
-.oneRecipe-heading {
+.oneRecipe-heading,
+.page-cat-category {
   color: #ff4754;
   padding-bottom: 10px;
   line-height: 1.2;
@@ -141,7 +143,9 @@ a {
   font-style: normal;
   font-family: Lato, sans-serif;
   color: #303334;
+  text-transform: uppercase;
 }
+
 .imageBox {
   max-width: 100%;
   display: flex;
