@@ -69,7 +69,7 @@ export default function Home() {
           />
         </section>
       </div>
-      <h1 className="text-center">TODAY'S MENU</h1>
+      <h1 className="oneRecipe-heading">TODAY'S MENU</h1>
       <div className="page-main-allrecipe container-lg ">{oneRecipeMain}</div>
     </Layout>
   )

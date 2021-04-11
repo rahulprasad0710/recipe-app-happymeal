@@ -13,12 +13,14 @@ const RecipeTemplate = props => {
         <div>
           {contentfulRecipe && (
             <div>
-              <h3>{contentfulRecipe.title}</h3>
-              <GatsbyImage
-                image={contentfulRecipe.recipeimage.gatsbyImageData}
-                alt={contentfulRecipe.title}
-                className="onerecipe-food-img"
-              />
+              <h1 className="oneRecipe-heading">{contentfulRecipe.title}</h1>
+              <div className="imageBox">
+                <GatsbyImage
+                  image={contentfulRecipe.recipeimage.gatsbyImageData}
+                  alt={contentfulRecipe.title}
+                  className="onerecipe-food-img"
+                />{" "}
+              </div>
 
               <section
                 className="oneRecipe-description"
@@ -50,7 +52,6 @@ export const oneRecipeQuery = graphql`
           layout: CONSTRAINED
           placeholder: DOMINANT_COLOR
           width: 600
-          height: 400
         )
       }
     }
