@@ -15,6 +15,7 @@ a {
   transform: translate(-50%, -50%);
   font-size: 120px;
   color: #ffffff;
+  color: #ff4754;
   z-index: 10;
   text-align: center;
   font-stretch: expanded;
@@ -60,29 +61,6 @@ a {
 .page-main-onerecipe h2 {
   color: #303334;
 }
-.page-main-onerecipe button {
-  margin-top: 10px;
-  border-radius: 14px;
-  border: 1px solid;
-  cursor: pointer;
-  font-size: 16px;
-  padding: 10px 20px;
-  font-weight: 300;
-  font-style: normal;
-  transition: all 0.3s ease;
-  color: #ffffff;
-  background-color: #ff4754;
-  border-color: #ff4754;
-  box-shadow: 9px 10px 17px -10px rgba(255, 71, 84, 0.61);
-  -webkit-box-shadow: 9px 10px 17px -10px rgba(255, 71, 84, 0.61);
-  -moz-box-shadow: 9px 10px 17px -10px rgba(255, 71, 84, 0.61);
-}
-
-.page-main-onerecipe button:hover {
-  color: #ff4754;
-  background-color: #ffffff;
-  border-color: #ff4754;
-}
 
 .page-main-onerecipe h2 {
   padding-bottom: 10px;
@@ -105,4 +83,14 @@ a {
   .page-main-onerecipe {
     margin: 20px;
   }
+}
+
+.page-cat-category {
+  flex-basis: 100%;
+  padding: 20px 0;
+  text-decoration: underline;
+}
+
+.page-main-allrecipe span {
+  color: #1d2597;
 }

@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import { Link } from "gatsby"
+import logo from "../../asset/logos/logomain.svg"
 import "./navbar.css"
 import SearchBox from "../SearchBox"
 
@@ -17,7 +18,12 @@ const Navbar = () => {
         <div className="navbar_brand-toggle">
           <Link className="navbar_brandName" to="/">
             <span className="text-red"> HAPPY</span>
-            <span className="text-yellow"> MEAL</span>
+            <img
+              src={logo}
+              alt="Logo"
+              style={{ width: "40px", height: "40px" }}
+            />
+            <span className="text-red"> MEAL</span>
           </Link>
           <div className="navbar_toogle-btns " onClick={toggleMenuHandler}>
             <div
@@ -63,9 +69,9 @@ const Navbar = () => {
                 onClick={() => setToggleMenu(false)}
                 className="navbar_nav-menu-item-link"
                 activeClassName="navLink-active"
-                to="/trending/"
+                to="/category/"
               >
-                TRENDING
+                CATEGORY
               </Link>
             </li>
             <li className="navbar_nav-menu-item">
@@ -73,9 +79,9 @@ const Navbar = () => {
                 onClick={() => setToggleMenu(false)}
                 className="navbar_nav-menu-item-link"
                 activeClassName="navLink-active"
-                to="/recipes/"
+                to="/about/"
               >
-                RECIPES
+                ABOUT
               </Link>
             </li>
             <li className="navbar_nav-menu-item">
