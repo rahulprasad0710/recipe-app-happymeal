@@ -16,6 +16,7 @@ const allRecipeQuery = graphql`
         title
         cookTime
         prepTime
+        category
         recipeimage {
           title
           gatsbyImageData(layout: FULL_WIDTH, placeholder: BLURRED)
@@ -50,6 +51,7 @@ export default function Home() {
         />
         <h5>Prep Time : {oneRecipe.prepTime} min</h5>
         <h5>Cook Time : {oneRecipe.cookTime} min</h5>
+        <h5>Category : {oneRecipe.category}</h5>
       </Link>
     )
   })
