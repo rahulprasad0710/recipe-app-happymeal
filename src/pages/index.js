@@ -31,10 +31,7 @@ const allRecipeQuery = graphql`
 
 export default function Home() {
   const recipeFullData = useStaticQuery(allRecipeQuery)
-
   const recipeNode = recipeFullData.allContentfulRecipe.nodes
-  console.log(recipeNode)
-  console.log()
 
   const oneRecipeMain = recipeNode.map(oneRecipe => {
     const slug = slugify(oneRecipe.title, { lower: true })
@@ -44,7 +41,6 @@ export default function Home() {
         to={`/recipes/${slug}`}
         key={oneRecipe.id}
         className="page-main-onerecipe"
-        state={{ _id: oneRecipe.id }}
       >
         <h2>{oneRecipe.title}</h2>
         <GatsbyImage
