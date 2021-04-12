@@ -6,6 +6,7 @@ import "./index.css"
 import "../asset/css/mainPage.css"
 import { StaticImage } from "gatsby-plugin-image"
 import Layout from "../components/Layout"
+import TodaysMenu from "../components/TodaysMenu"
 
 const allRecipeQuery = graphql`
   {
@@ -72,7 +73,13 @@ export default function Home() {
           />
         </section>
       </div>
-      <h1 className="oneRecipe-heading">TODAY'S MENU</h1>
+      <h1 className=" page-cat-category page-today-heading container-lg">
+        TODAY'S RECIPE
+      </h1>
+      <TodaysMenu />
+      <h1 className=" page-cat-category page-today-heading container-lg">
+        MOST POPULAR
+      </h1>
       <div className="page-main-allrecipe container-lg ">{oneRecipeMain}</div>
     </Layout>
   )

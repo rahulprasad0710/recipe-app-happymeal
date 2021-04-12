@@ -44,7 +44,7 @@ const Trending = () => {
           <h4>
             Tag:{" "}
             {e.tag.tagall.map(e => (
-              <span> #{e} </span>
+              <span> #{e} &nbsp; </span>
             ))}
           </h4>
         </Link>
@@ -67,7 +67,7 @@ const Trending = () => {
             <h4>
               Tag:
               {e.tag.tagall.map(e => (
-                <span>#{e}</span>
+                <span>#{e} &nbsp;</span>
               ))}
             </h4>
           </Link>
@@ -86,24 +86,3 @@ const Trending = () => {
 }
 
 export default Trending
-
-// const catData = sortedData.map(e => {
-//   var catName = ""
-//   if (e.category == catName) {
-//     catName = e.category
-//     return (
-//       <div>
-//         <h3>e.title</h3>
-//         <h4>
-//           {e.tag.tagall.map(e => (
-//             <h5>{e}</h5>
-//           ))}
-//         </h4>
-//       </div>
-//     )
-//   } else {
-//     catName = e.category
-//     console.log(e.category)
-//     return <h2>{e.category}</h2>
-//   }
-// })

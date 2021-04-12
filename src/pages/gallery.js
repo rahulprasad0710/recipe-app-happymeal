@@ -25,18 +25,23 @@ const Gallery = () => {
   const data = useStaticQuery(galleryQuery)
   const allImage = data.allFile.nodes
 
-  const eachImgItem = allImage.map(eachImg => (
-    <div className="gallery-image-item" key={eachImg.id}>
-      <GatsbyImage
-        image={eachImg.childImageSharp.gatsbyImageData}
-        alt={eachImg.id}
-      />
-    </div>
-  ))
+  const eachImgItem = allImage.map(eachImg => {
+    const pathToImage = getImage()
+
+    return (
+      <div className="gallery-image-item" key={eachImg.id}>
+        <GatsbyImage
+          image={eachImg.childImageSharp.gatsbyImageData}
+          alt={eachImg.id}
+        />
+      </div>
+    )
+  })
 
   return (
     <Layout>
       <div className="gallery-container container-lg">
+        <h2 className="page-cat-category"> GALLERY</h2>
         <div className="gallery-grid">{eachImgItem}</div>
       </div>
     </Layout>

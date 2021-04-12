@@ -70,6 +70,8 @@ a {
 .oneRecipe-heading {
   margin: 2vh;
   font-size: 6vw;
+  text-decoration: underline;
+  text-decoration-color: #ff4754;
 }
 
 @media only screen and (max-width: 900px) {
@@ -89,6 +91,7 @@ a {
   flex-basis: 100%;
   padding: 20px 0;
   text-decoration: underline;
+  text-decoration-color: #ff4754;
 }
 
 .page-main-allrecipe span {
