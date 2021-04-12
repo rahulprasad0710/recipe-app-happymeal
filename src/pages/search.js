@@ -1,9 +1,9 @@
-import React, { useContext, useState, useEffect, useLayoutEffect } from "react"
+import React, { useContext, useState, useLayoutEffect } from "react"
 import axios from "axios"
 import Layout from "../components/Layout"
-import { StaticImage } from "gatsby-plugin-image"
+
 import AppContext from "../context/AppContext"
-import slugify from "slugify"
+
 import { Link } from "gatsby"
 
 const Search = () => {
@@ -62,7 +62,7 @@ const Search = () => {
   return (
     <Layout>
       <section className="container-lg">
-        {!(recipe == "") && <h5>Searched for {recipe} </h5>}
+        {!(recipe === "") && <h5>Searched for {recipe} </h5>}
         <div>
           {isLoading && <div className="container-lg ">Loading.... </div>}
           {fetchData && (

@@ -1,14 +1,19 @@
-import React, { useState } from "react"
+import React from "react"
 import Layout from "../../components/Layout"
 import { graphql } from "gatsby"
 import marked from "marked"
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import { GatsbyImage } from "gatsby-plugin-image"
+import Seo from "../../seo/Seo"
 const RecipeTemplate = props => {
   console.log(props)
   const { contentfulRecipe } = props.data
   const recipeDescription = marked(contentfulRecipe.description.description)
   return (
     <Layout>
+      <Seo
+        title={contentfulRecipe.title}
+        description={contentfulRecipe.title}
+      />
       <section className="page-onerecipe container-lg">
         <div>
           {contentfulRecipe && (

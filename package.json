@@ -17,6 +17,7 @@
     "axios": "^0.21.1",
     "gatsby": "^3.1.2",
     "gatsby-plugin-image": "^1.2.1",
+    "gatsby-plugin-prefetch-google-fonts": "^1.4.3",
     "gatsby-plugin-sharp": "^3.2.1",
     "gatsby-source-contentful": "^5.2.1",
     "gatsby-source-filesystem": "^3.2.0",
@@ -24,6 +25,7 @@
     "marked": "^2.0.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
+    "react-helmet": "^6.1.0",
     "react-icons": "^4.2.0",
     "slugify": "^1.5.0"
   },

@@ -8,7 +8,8 @@ const Footer = () => {
         <span className="text-yellow">MEAL</span>
       </h3>
       <h3>
-        Built with <a href="https://www.gatsbyjs.com/">Gatsby</a> By: {"  "}
+        Built with <a href="https://www.gatsbyjs.com/">Gatsby</a>&nbsp; By:{" "}
+        {"  "}
         <span>
           <a href="https://www.google.com/"> Rahul</a>
         </span>

@@ -1,12 +1,13 @@
 import React from "react"
 import slugify from "slugify"
 import { useStaticQuery, graphql, Link } from "gatsby"
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import { GatsbyImage } from "gatsby-plugin-image"
 import "./index.css"
 import "../asset/css/mainPage.css"
 import { StaticImage } from "gatsby-plugin-image"
 import Layout from "../components/Layout"
 import TodaysMenu from "../components/TodaysMenu"
+import Seo from "../seo/Seo"
 
 const allRecipeQuery = graphql`
   {
@@ -60,6 +61,7 @@ export default function Home() {
 
   return (
     <Layout>
+      <Seo title={"Home Page"} description={"recipe site"} />
       <div className="page-main">
         <section className="section-1">
           <header className="heading">LOVE AT FIRST BITE</header>
@@ -84,7 +86,3 @@ export default function Home() {
     </Layout>
   )
 }
-
-//<p>{oneRecipe.tag.tagIntro} </p>
-
-//

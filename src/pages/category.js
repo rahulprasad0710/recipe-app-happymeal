@@ -1,7 +1,9 @@
-import React, { useState } from "react"
+import React from "react"
 import { useStaticQuery, graphql, Link } from "gatsby"
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import { GatsbyImage } from "gatsby-plugin-image"
+import slugify from "slugify"
 import Layout from "../components/Layout"
+import Seo from "../seo/Seo"
 
 const categoryQuery = graphql`
   {
@@ -24,17 +26,12 @@ const categoryQuery = graphql`
 const Trending = () => {
   const fetchData = useStaticQuery(categoryQuery)
   const sortedData = fetchData.allContentfulRecipe.nodes
-  console.log(fetchData)
   let catNow = " "
-  console.log(`outmap ${catNow}`)
-
   const catgData = sortedData.map((e, i) => {
-    console.log(`inmap ${catNow}`)
-    if (e.category == catNow) {
-      console.log("same cats")
-
+    const slug = slugify(e.title, { lower: true })
+    if (e.category === catNow) {
       return (
-        <Link className="page-main-onerecipe">
+        <Link to={`/recipes/${slug}`} className="page-main-onerecipe">
           <h2>{e.title}</h2>
           <GatsbyImage
             image={e.recipeimage.gatsbyImageData}
@@ -50,13 +47,11 @@ const Trending = () => {
         </Link>
       )
     } else {
-      console.log("diff cat")
       catNow = e.category
-      console.log(`diff ${catNow}`)
       return (
         <>
           <h2 className="page-cat-category"> {e.category}</h2>
-          <Link className="page-main-onerecipe">
+          <Link to={`/recipes/${slug}`} className="page-main-onerecipe">
             <h2>{e.title}</h2>
             <GatsbyImage
               image={e.recipeimage.gatsbyImageData}
@@ -78,6 +73,7 @@ const Trending = () => {
 
   return (
     <Layout>
+      <Seo title={"Category"} description={"recipe category"} />
       <section className="container-lg">
         <div className="page-main-allrecipe">{catgData}</div>
       </section>
