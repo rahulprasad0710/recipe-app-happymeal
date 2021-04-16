@@ -4,6 +4,8 @@ import Layout from "../components/Layout"
 import AppContext from "../context/AppContext"
 import slugify from "slugify"
 import { Link } from "gatsby"
+import Seo from "../seo/Seo"
+import "../asset/css/searchPage.css"
 
 const Search = () => {
   const { recipe } = useContext(AppContext)
@@ -29,7 +31,7 @@ const Search = () => {
   if (fetchData) {
     var oneRecipeMain = fetchData.data.hits.map(oneRecipe => {
       return (
-        <Link key={oneRecipe.recipe.label} to="/">
+        <Link className="one-search-recipe" key={oneRecipe.recipe.label} to="/">
           <h3>{oneRecipe.recipe.label}</h3>
           <img
             src={oneRecipe.recipe.image}
@@ -43,11 +45,16 @@ const Search = () => {
 
   return (
     <Layout>
-      <section>
-        <h6 className="text-info text-center">
-          {isLoading && <span className="text-danger">Loading.... </span>}
-          {fetchData && <div className="text-danger">{oneRecipeMain}</div>}
-        </h6>
+      <Seo title={"search for recipe"} description={"recipe search page"} />
+      {fetchData && (
+        <h3 className=" search-page-searchItem container-md">
+          Searched for {recipe}
+        </h3>
+      )}
+      <section className=" search-page-section container-md">
+        {isLoading && <span className="text-danger">Loading.... </span>}
+
+        {fetchData && <div className="all-search-recipe">{oneRecipeMain}</div>}
       </section>
     </Layout>
   )
