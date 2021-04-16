@@ -1,4 +1,4 @@
-import React, { useContext, useState, useLayoutEffect } from "react"
+import React, { useContext, useState, useEffect } from "react"
 import axios from "axios"
 import Layout from "../components/Layout"
 import AppContext from "../context/AppContext"
@@ -13,7 +13,7 @@ const Search = () => {
   const [fetchData, setFetchData] = useState(null)
   const [isLoading, setIsLoading] = useState(true)
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     const fetchData = async () => {
       const apiUrl = `https://api.edamam.com/search?q=${recipe}&app_id=59dcc006&app_key=0450fce352acf1f5e7b9ae3180027248`
       try {
