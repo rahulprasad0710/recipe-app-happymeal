@@ -1,5 +1,6 @@
 import React, { useContext, useState, useEffect } from "react"
 import axios from "axios"
+import { LazyLoadImage } from "react-lazy-load-image-component"
 import Layout from "../components/Layout"
 import AppContext from "../context/AppContext"
 import slugify from "slugify"
@@ -9,7 +10,6 @@ import "../asset/css/searchPage.css"
 
 const Search = () => {
   const { recipe } = useContext(AppContext)
-
   const [fetchData, setFetchData] = useState(null)
   const [isLoading, setIsLoading] = useState(true)
 
@@ -33,10 +33,11 @@ const Search = () => {
       return (
         <Link className="one-search-recipe" key={oneRecipe.recipe.label} to="/">
           <h3>{oneRecipe.recipe.label}</h3>
-          <img
-            src={oneRecipe.recipe.image}
+
+          <LazyLoadImage
             alt={oneRecipe.recipe.label}
-            style={{ width: "300px" }}
+            src={oneRecipe.recipe.image}
+            width={300}
           />
         </Link>
       )
