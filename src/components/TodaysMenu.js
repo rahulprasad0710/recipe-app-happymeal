@@ -10,7 +10,7 @@ const todayQuery = graphql`
       id
       title
       recipeimage {
-        gatsbyImageData(placeholder: BLURRED, layout: FULL_WIDTH)
+        gatsbyImageData(placeholder: BLURRED)
       }
       description {
         description

@@ -13,9 +13,6 @@ const galleryQuery = graphql`
         id
         childImageSharp {
           gatsbyImageData(width: 450, layout: FULL_WIDTH, placeholder: BLURRED)
-          fluid(maxWidth: 400, fit: COVER, maxHeight: 300) {
-            srcSet
-          }
         }
       }
     }

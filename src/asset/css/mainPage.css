@@ -8,6 +8,9 @@ a {
   position: relative;
 }
 
+.page-footer a {
+  color: #ffffff;
+}
 .heading {
   position: absolute;
   top: 50%;

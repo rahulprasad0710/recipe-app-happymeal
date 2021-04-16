@@ -25,6 +25,7 @@ nav li {
 nav a {
   color: rgb(43, 40, 58);
   text-decoration: none;
+  font-size: 20px;
 }
 
 .navbar_nav-container {
@@ -84,7 +85,7 @@ nav a {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-grow: 1.2;
+
   justify-self: end;
 }
 

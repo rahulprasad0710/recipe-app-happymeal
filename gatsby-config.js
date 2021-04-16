@@ -10,21 +10,6 @@ module.exports = {
   },
   plugins: [
     {
-      resolve: `gatsby-plugin-prefetch-google-fonts`,
-      options: {
-        fonts: [
-          {
-            family: `Roboto`,
-            variants: [`400`, `700`, `300`, `900`],
-          },
-          {
-            family: `Lato`,
-            variants: [`400`, `700`, `300`, `900`],
-          },
-        ],
-      },
-    },
-    {
       resolve: `gatsby-source-contentful`,
       options: {
         spaceId: `a3vg8yxpqbec`,
