@@ -2,6 +2,7 @@ import React, { useState } from "react"
 import { Link } from "gatsby"
 import logo from "../../asset/logos/logomain.svg"
 import "./navbar.css"
+import SearchBox from "../SearchBox"
 
 const Navbar = () => {
   const [toggleMenu, setToggleMenu] = useState(false)
@@ -94,6 +95,7 @@ const Navbar = () => {
               </Link>
             </li>
           </ul>
+          <SearchBox />
         </div>
       </div>
     </nav>
